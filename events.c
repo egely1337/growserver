@@ -16,7 +16,9 @@ event_receive_event
     ENetEvent* event
 ) 
 {
-    fprintf(stdout, "Found a packet.\n\r");
+    fprintf(stdout, "Receive a packet.\n\r");
+
+    
     tank_packet_t* receive_packet = (tank_packet_t*)event->packet->data;
     
     switch(receive_packet->packet_type) {

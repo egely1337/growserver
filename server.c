@@ -8,6 +8,7 @@
 #include <packets.h>
 #include <events.h>
 
+#define MAX_CLIENTS 32
 
 int main(int argc, char** argv) {
     if(enet_initialize() != 0) {
@@ -19,7 +20,6 @@ int main(int argc, char** argv) {
 
     address.host = ENET_HOST_ANY;
     address.port = 1337;
-    const int MAX_CLIENTS = 32;
 
     ENetHost* server = enet_host_create(&address, MAX_CLIENTS, 2, 0, 0);
     if(server == (void*)0) {

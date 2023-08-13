@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
                     event_receive_event(&event);
                     break;
                 case ENET_EVENT_TYPE_DISCONNECT:
-                    fprintf(stdout, "Someone disconnected from server.\n\r");
+                    event_disconnect_event(&event);
                     break;
             }
         }
